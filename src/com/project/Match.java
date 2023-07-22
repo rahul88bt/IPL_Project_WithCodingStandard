@@ -6,7 +6,7 @@ public class Match {
     private String team1;
     private String team2;
     private String winner;
-    private String player_of_match;
+    private String playerOfMatch;
 
     public String getId() {
         return id;
@@ -48,11 +48,11 @@ public class Match {
         this.winner = winner;
     }
 
-    public String getPlayer_of_match() {
-        return player_of_match;
+    public String getPlayerOfMatch() {
+        return playerOfMatch;
     }
 
-    public void setPlayer_of_match(String player_of_match) {
-        this.player_of_match = player_of_match;
+    public void setPlayerOfMatch(String playerOfMatch) {
+        this.playerOfMatch = playerOfMatch;
     }
 }
