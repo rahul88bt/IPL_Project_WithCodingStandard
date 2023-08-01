@@ -12,7 +12,9 @@ public class Main {
     public static final int PLAYER_OF_MATCH = 13;
     public static final int BATTING_TEAM = 2;
     public static final int OVER = 4;
+    public static final int BOWLING_TEAM=3;
     public static final int BALL = 5;
+    public static final int BATSMAN=6;
     public static final int BOWLER = 8;
     public static final int EXTRA_RUNS = 16;
     public static final int TOTAL_RUNS = 17;
@@ -61,6 +63,8 @@ public class Main {
                 delivery.setBowler(field[BOWLER]);
                 delivery.setExtra_runs(field[EXTRA_RUNS]);
                 delivery.setTotal_runs(field[TOTAL_RUNS]);
+                delivery.setBatsman(field[BATSMAN]);
+                delivery.setBowling_team(field[BOWLING_TEAM]);
                 deliveries.add(delivery);
 
             }
@@ -70,7 +74,7 @@ public class Main {
         return deliveries;
     }
 
-    public static void findNumberOfMatchesPlayedPerTeam(List<Match> matches) {
+    private static void findNumberOfMatchesPlayedPerTeam(List<Match> matches) {
         HashMap<String, Integer> totalMatchPerTeamMap = new HashMap<>();
         Match match;
         for (int i = 0; i < matches.size(); i++) {
@@ -86,7 +90,7 @@ public class Main {
         System.out.println(totalMatchPerTeamMap);
     }
 
-    public static void findNumberOfMatchesWinnerPerTeam (List < Match > matches) {
+    private static void findNumberOfMatchesWinnerPerTeam (List < Match > matches) {
         HashMap<String, Integer> winnerTeamMap = new HashMap<>();
         Match match;
         for (int i = 0; i < matches.size(); i++) {
@@ -101,7 +105,7 @@ public class Main {
         }
         System.out.println(winnerTeamMap);
     }
-    public static void findExtraRunConcededPerTeamIn2016(List<Match> matches, List<Delivery> deliveries){
+    private static void findExtraRunConcededPerTeamIn2016(List<Match> matches, List<Delivery> deliveries){
         HashMap<String,Integer> teamRunMap=new HashMap<>();
         Match match;
         Delivery delivery;
@@ -135,7 +139,7 @@ public class Main {
         System.out.println(teamRunMap);
     }
 
-    public static void findTopEconomicalBowlerIn2015(List<Match> matches,List<Delivery> deliveries){
+    private static void findTopEconomicalBowlerIn2015(List<Match> matches,List<Delivery> deliveries){
             HashMap<String, Integer> bowlerOverMap = new HashMap<>();
             HashMap<String, Integer> bowlerRunMap = new HashMap<>();
             int startIndexOf2015 = 0;
@@ -207,7 +211,7 @@ public class Main {
                 }
             }
         }
-        public static void maxPlayerOfTheMatch20141516(List<Match> matches){
+        private static void maxPlayerOfTheMatch20141516(List<Match> matches){
             HashMap<String,Integer> playerOfTheMatchMap=new HashMap<>();
             for(int i=0;i<matches.size();i++) {
                 Match match;
@@ -235,6 +239,5 @@ public class Main {
         findExtraRunConcededPerTeamIn2016(matches,deliveries);
         findTopEconomicalBowlerIn2015(matches,deliveries);
         maxPlayerOfTheMatch20141516(matches);
-
     }
 }

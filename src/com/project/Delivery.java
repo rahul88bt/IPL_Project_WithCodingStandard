@@ -10,6 +10,15 @@ public class Delivery {
     private String batsman_runs;
     private String extra_runs;
     private String total_runs;
+    private String batsman;
+
+    public String getBatsman() {
+        return batsman;
+    }
+
+    public void setBatsman(String batsman) {
+        this.batsman = batsman;
+    }
 
     public String getMatch_id() {
         return match_id;
